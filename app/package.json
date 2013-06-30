@@ -1,0 +1,25 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "mongod;node-dev server",
+    "test": "mocha ../test/server/ --growl --reporter spec"
+  },
+  "dependencies": {
+    "express": "3.0.5",
+    "ejs": "*",
+    "less-middleware": "*",
+    "mongoose": "~3.6.11",
+    "connect-mongo": "~0.3.2",
+    "underscore": "~1.4.4",
+    "q": "~0.9.6",
+    "winston": "~0.7.2"
+  },
+  "devDependencies": {
+    "node-dev": "~2.0.1",
+    "supertest": "~0.7.0",
+    "chai": "~1.7.1",
+    "should": "~1.2.2"
+  }
+}

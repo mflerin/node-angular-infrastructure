@@ -1,0 +1,24 @@
+<h2>{{ model.message }}</h2>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+        <th>create</th>
+        <th>edit</th>
+        <th>delete</th>
+        <th>name</th>
+        <th>age</th>
+        <th>email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in users">
+        <td><a href="#/users/create"><i class="icon-user"></i></a></td>
+        <td><a href="#/users/edit/{{user._id}}"><i class="icon-pencil"></i></a></td>
+        <td><a href ng-click="actions.delete(user)"><i class="icon-trash"></i></a></td>
+        <td>name: {{ user.name }}</td>
+        <td>age: {{ user.age }}</td>
+        <td>email: {{ user.email }}</td>
+    </tr>
+    </tbody>
+</table>
+
