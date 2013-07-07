@@ -39,7 +39,7 @@ describe('Should perform CRUD operations through api', function () {
                 .then(databaseHelper.createUser("User3", 34))
                 .done(function (data) {
                     request(app)
-                        .get('/api/users')
+                        .get('/api/user')
                         .expect(200)
                         .end(function (err, response) {
                             if (err) throw err;

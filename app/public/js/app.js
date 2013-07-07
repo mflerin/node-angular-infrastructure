@@ -1,9 +1,13 @@
 // Declare module with top level dependencies to be injected
- angular.module('app', ['ngResource', 'user','toastr'])
+ angular.module('app', ['ngResource', 'user'])
     .config(function ($routeProvider) {
         $routeProvider
+            .when('/', {
+                templateUrl: '/views/userList.html',
+                controller: 'UserListCtrl',
+                title: 'User List'})
             .when('/users', {
-                templateUrl: '/views/userlist.html',
+                templateUrl: '/views/userList.html',
                 controller: 'UserListCtrl',
                 title: 'User List'
             }).when('/users/edit/:id', {

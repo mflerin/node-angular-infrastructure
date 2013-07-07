@@ -6,7 +6,7 @@ var db = require('../data/db')
 module.exports = {
 
     many: function (req, res, next) {
-        User.find({}, {}, {limit: 10}, function (err, docs) {
+        User.find({}, {}, {limit: 10,sort: [['_id', -1]]}, function (err, docs) {
             res.json(docs);
         });
     },

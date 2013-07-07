@@ -1,1 +1,43 @@
-<h2>{{ model.message }}</h2>
+<div class="well">
+    <h2>{{ model.message }}</h2>
+
+
+    <form name="form" novalidate class="css-form">
+        <div class="control-group">
+            <div class="controls">
+                <input placeholder="user name" name="name" class="input-xlarge" type="text"
+                       data-ng-model="user.name"
+                       required autofocus/>
+                <i class="icon-remove" data-ng-show="form.name.$dirty && form.name.$invalid"></i>
+                <i class="icon-ok" data-ng-show="form.name.$dirty && form.name.$valid"></i>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input placeholder="user age" name="age" class="input-xlarge" type="number"
+                       min="18" max="110"
+                       data-ng-model="user.age"
+                       required/>
+                <i class="icon-remove" data-ng-show="form.age.$dirty && form.age.$invalid"></i>
+                <i class="icon-ok" data-ng-show="form.age.$dirty && form.age.$valid"></i>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input placeholder="email address" name="email" class="input-xlarge" type="email"
+                       data-ng-model="user.email"
+                       required/>
+                <i class="icon-remove" data-ng-show="form.email.$dirty && form.email.$invalid"></i>
+                <i class="icon-ok" data-ng-show="form.email.$dirty && form.email.$valid"></i>
+            </div>
+        </div>
+        <div class="form-actions">
+                <button class="btn btn-primary" data-ng-click="save(user)" data-ng-disabled="form.$invalid">Save
+                </button>
+                <button class="btn btn-warning" data-ng-click="cancel()" data-ng-disabled="!form.$dirty">Cancel</button>
+        </div>
+    </form>
+    <br/>
+    <a href="/#/users">Go back to user list page</a>
+    <br/>
+</div>

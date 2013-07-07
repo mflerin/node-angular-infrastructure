@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <!-- jasmine -->
+    <script src="../components/jasmine/lib/jasmine-core/jasmine.js"></script>
+    <script src="../../app/public/components/chai/chai.js"></script>
+
+    <!-- jasmine's html reporting code and css -->
+    <script src="../components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+    <link href="../components/jasmine/lib/jasmine-core/jasmine.css" rel="stylesheet">
+
+    <!-- angular itself -->
+    <script src="../../app/public/components/angular/angular.js"></script>
+
+    <script src="../../app/public/components/angular-resource/angular-resource.js"></script>
+
+    <!-- angular's testing helpers -->
+    <script src="../../app/public/components/angular-mocks/angular-mocks.js"></script>
+
+    <!-- your angular app code -->
+    <script src="../../app/public/js/app.js"></script>
+    <script src="../../app/public/js/message.js"></script>
+    <script src="../../app/public/js/user/user.js"></script>
+
+    <!-- your Specs (tests) -->
+    <script src="unit/testrunner.test.spec.js"></script>
+    <script src="unit/userListCtrl.spec.js"></script>
+</head>
+<body>
+<!-- bootstrap jasmine! -->
+<script>
+    var jasmineEnv = jasmine.getEnv();
+
+    // Tell it to add an Html Reporter
+    // this will add detailed HTML-formatted results
+    // for each spec ran.
+    jasmineEnv.addReporter(new jasmine.HtmlReporter());
+
+    // Execute the tests!
+    jasmineEnv.execute();
+</script>
+</body>
+</html>

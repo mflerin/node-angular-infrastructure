@@ -8,8 +8,8 @@ basePath = '../../app/public';
 
 // list of files / patterns to load in the browser
 files = [
-  MOCHA,
-  MOCHA_ADAPTER,
+  JASMINE,
+  JASMINE_ADAPTER,
     'components/angular/angular.js',
     'components/angular-mocks/angular-mocks.js',
     'components/angular-resource/angular-resource.js',
