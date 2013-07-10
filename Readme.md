@@ -6,7 +6,7 @@
 /app npm test
 
 
-##Running client side tests tests##
+##Running client side tests##
 ###End to End##
 test/client karma start e2e.conf.js
 
