@@ -72,6 +72,6 @@ captureTimeout = 60000;
 // if true, it capture browsers, run tests and exit
 singleRun = false;
 
-autoWatch = true;
+autoWatch = false;
 
 urlRoot = '/_karma_/';
