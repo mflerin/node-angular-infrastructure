@@ -54,6 +54,8 @@ angular.module('user', ['ngResource', 'toastr'])
         var originalUser = {name: '', age: '', email: ''};
         var user = angular.copy(originalUser);
 
+        $scope.user = user;
+
         //Clear all form fields in the View
         $scope.cancel = function () {
             $scope.user = originalUser;
