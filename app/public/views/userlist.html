@@ -1,5 +1,4 @@
-<h2 ng-show="users.length>0">{{ model.message }}</h2>
-<table class="table table-bordered table-striped table-hover" ng-show="users.length>0">
+<table class="table table-bordered table-striped table-hover">
     <thead>
     <tr>
         <th>create</th>
@@ -11,16 +10,16 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="user in users">
+    <tr >
         <td><a href="#/users/create"><i class="icon-user"></i></a></td>
-        <td><a href="#/users/edit/{{user._id}}"><i class="icon-pencil"></i></a></td>
-        <td><a href ng-click="actions.delete(user)"><i class="icon-trash"></i></a></td>
-        <td>{{ user.name }}</td>
-        <td>{{ user.age }}</td>
-        <td>{{ user.email }}</td>
+        <td><a href="#/users/edit/1234ChangeMe"><i class="icon-pencil"></i></a></td>
+        <td><a href="" ><i class="icon-trash"></i></a></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
     </tbody>
 </table>
 
-<button class="btn btn-primary" ng-show="users.length==0" ng-click="actions.goToCreate()">Create a user</button>
+<!--<button class="btn btn-primary" ng-show="users.length==0" ng-click="goToCreate()">Create a user</button>-->
 
