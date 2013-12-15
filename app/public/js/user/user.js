@@ -52,22 +52,20 @@ angular.module('user', ['ngResource', 'toastr'])
         };
     }).controller('UserCreateCtrl', function ($scope, $location, userApi, message) {
         var originalUser = {name: '', age: '', email: ''};
-        var user = angular.copy(originalUser);
 
         $scope.user = user;
 
         //Clear all form fields in the View
+        var user = angular.copy(originalUser);
         $scope.cancel = function () {
             $scope.user = originalUser;
         };
 
         //Add save method to the scope
         $scope.save = function (user) {
-            console.log('user is:', user);
             userApi.save(user, function () {
                 message.success('Success', 'New User Created.');
                 $location.path('users');
             });
-            $scope.cancel();
         };
     });

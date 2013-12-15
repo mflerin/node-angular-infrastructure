@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title></title>
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/bootstrap/docs/assets/js/bootstrap.min.js"></script>
+    <script src="components/underscore/underscore-min.js"></script>
+    <script src="components/angular/angular.min.js"></script>
+    <script src="components/angular-ui/build/angular-ui.min.js"></script>
+</head>
+<style>
+    div{
+        float: left;
+        margin-right: 50px;
+    }
+</style>
+<body>
+
+<div>
+    <h1>jQuery Example</h1>
+    <input id="textInput" type="text"/>
+    <button id="add">JQuery add button</button>
+
+    <ul id="sourceList"></ul>
+    <ul id="destinationList"></ul>
+</div>
+
+<div ng-controller="listController">
+    <h1>AngularJs Example</h1>
+
+    <input type="text" ng-model="newItem"/>
+    <button ng-click="addItem(newItem)">angular add button</button>
+
+    <ul>
+        <li ng-repeat="item in firstList" ng-click="changeLists(item)">{{item}}</li>
+    </ul>
+    <ul>
+        <li ng-repeat="item in secondList">{{item}}</li>
+    </ul>
+</div>
+
+
+<script>
+    $(function () {
+
+        //Get data
+        var data = ['string 1', 'string 2', 'string 3', 'string 4', 'string 5'];
+
+        //Get dom elements
+        var firstList = $('#sourceList');
+        var secondList = $('#destinationList');
+        var input = $('#textInput');
+
+        //Add data to the first list
+        for (var i = 0; i < data.length; i++) {
+            var listItem = $('<li>' + data[i] + '</li>');
+
+            //bind event to switch item from first to second list
+            $(listItem).on('click', function () {
+                $(secondList).append(this);
+            });
+
+            $(firstList).append(listItem);
+        }
+
+        //bind event for click button
+        $('#add').on('click', function () {
+
+            //Add new item to the list using textbox value
+            var listItem = $('<li>' + $(input).val() + '</li>');
+            $(firstList).append(listItem);
+
+            //bind click event to new list item
+            $(listItem).on('click', function () {
+                $(secondList).append(this);
+            });
+        })
+    });
+
+    function listController($scope) {
+
+        //bind array (automatically becomes html)
+        $scope.firstList = ['string 1', 'string 2', 'string 3', 'string 4', 'string 5'];
+        $scope.secondList = [];
+
+        //swap item from one list to another
+        $scope.changeLists = function (item) {
+
+            $scope.secondList.push(item);
+
+            var index = $scope.firstList.indexOf(item);
+            $scope.firstList.splice(index, 1);
+        };
+
+        // add your new item to the first list
+        $scope.addItem = function (newItem) {
+            $scope.firstList.push(newItem);
+        }
+    }
+
+</script>
+</body>
+</html>

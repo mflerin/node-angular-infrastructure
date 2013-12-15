@@ -1,5 +1,5 @@
 // Declare module with top level dependencies to be injected
- angular.module('app', ['ngResource', 'user'])
+ angular.module('app', ['ngResource', 'user','controlsModule'])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
@@ -18,7 +18,11 @@
                 templateUrl: '/views/userEdit.html',
                 controller: 'UserCreateCtrl',
                 title: 'Create User'
+            }).when('/compare',{
+                templateUrl:'/views/compare.html',
+                title:'jquery and angular compared'
             })
+
     })
     .run([ '$location', '$rootScope', function ($location, $rootScope) {
 
