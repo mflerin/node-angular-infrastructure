@@ -12,7 +12,7 @@ angular.module('user', ['ngResource', 'toastr'])
             message: 'Here are my users'
         };
 
-      $scope.users =  userApi.query();
+        $scope.users = userApi.query();
 
         $scope.actions = {
             delete: function (user) {
@@ -24,12 +24,17 @@ angular.module('user', ['ngResource', 'toastr'])
                     }
                 });
             },
-
             goToCreate: function () {
                 $location.path('/users/create');
+            },
+            generateCharts: function () {
+                $scope.chartData = _.map($scope.users, function (item) {
+                    return {name: item.name, y: item.age}
+                })
             }
         }
-    }).controller('UserEditCtrl',function ($scope, $routeParams, $location, userApi, message) {
+    }).
+    controller('UserEditCtrl',function ($scope, $routeParams, $location, userApi, message) {
         var originalUser = {name: '', age: '', email: ''};
         $scope.model = {
             message: 'Edit Users'
@@ -52,11 +57,11 @@ angular.module('user', ['ngResource', 'toastr'])
         };
     }).controller('UserCreateCtrl', function ($scope, $location, userApi, message) {
         var originalUser = {name: '', age: '', email: ''};
+        var user = angular.copy(originalUser);
 
         $scope.user = user;
 
         //Clear all form fields in the View
-        var user = angular.copy(originalUser);
         $scope.cancel = function () {
             $scope.user = originalUser;
         };

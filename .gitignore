@@ -30,6 +30,7 @@ obj/
 #############
 node_modules/
 components/
+bower_components/
 
 # Swap files # 
 *.swp

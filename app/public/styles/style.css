@@ -1,7 +1,37 @@
+html {
+  background-color: #e9eae5;
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #e9eae5;
 }
 a {
   color: #00B7FF;
+}
+/* Animations */
+.slide-animation.ng-enter,
+.slide-animation.ng-leave {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.slide-animation.ng-enter {
+  left: 100%;
+}
+.slide-animation.ng-enter.ng-enter-active {
+  left: 0;
+}
+.slide-animation.ng-leave {
+  left: 0;
+  opacity: 1;
+}
+.slide-animation.ng-leave.ng-leave-active {
+  opacity: 0;
+  left: -100%;
 }

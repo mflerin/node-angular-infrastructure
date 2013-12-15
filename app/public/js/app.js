@@ -1,5 +1,5 @@
 // Declare module with top level dependencies to be injected
- angular.module('app', ['ngResource', 'user','controlsModule'])
+ angular.module('app', ['ngAnimate','ngRoute','ngResource', 'user','controlsModule'])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {

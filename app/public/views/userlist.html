@@ -1,4 +1,10 @@
 <h2 ng-show="users.length>0">{{ model.message }}</h2>
+
+<button class="btn btn-primary" ng-show="users.length>0" ng-click="actions.generateCharts()">Generate Charts</button>
+<piechart chart-data="chartData" title="Ages Pie Chart" sub-title="(for my demo)"></piechart>
+<br/>
+<barchart chart-data="chartData" title="Ages Bar Chart" sub-title="(for my demo)"></barchart>
+
 <table class="table table-bordered table-striped table-hover" ng-show="users.length>0">
     <thead>
     <tr>
@@ -23,4 +29,3 @@
 </table>
 
 <button class="btn btn-primary" ng-show="users.length==0" ng-click="actions.goToCreate()">Create a user</button>
-

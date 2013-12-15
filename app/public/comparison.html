@@ -9,9 +9,15 @@
     <script src="components/angular-ui/build/angular-ui.min.js"></script>
 </head>
 <style>
-    div{
+    div {
         float: left;
         margin-right: 50px;
+        border:1px solid lime;
+        padding: 10px;
+    }
+
+    ul li{
+        cursor: pointer;
     }
 </style>
 <body>
@@ -21,7 +27,9 @@
     <input id="textInput" type="text"/>
     <button id="add">JQuery add button</button>
 
+    <h3>List 1</h3>
     <ul id="sourceList"></ul>
+    <h3>List 2</h3>
     <ul id="destinationList"></ul>
 </div>
 
@@ -31,9 +39,11 @@
     <input type="text" ng-model="newItem"/>
     <button ng-click="addItem(newItem)">angular add button</button>
 
+    <h3>List 1</h3>
     <ul>
         <li ng-repeat="item in firstList" ng-click="changeLists(item)">{{item}}</li>
     </ul>
+    <h3>List 2</h3>
     <ul>
         <li ng-repeat="item in secondList">{{item}}</li>
     </ul>
@@ -85,9 +95,7 @@
 
         //swap item from one list to another
         $scope.changeLists = function (item) {
-
             $scope.secondList.push(item);
-
             var index = $scope.firstList.indexOf(item);
             $scope.firstList.splice(index, 1);
         };
